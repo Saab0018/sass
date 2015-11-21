@@ -1,7 +1,7 @@
 /* -- Breaking down the stylesheet -- */
-@import "css-partials/mixins";
-@import "css-partials/header";
-@import "css-partials/navigation";
+@import "scss-partials/mixins";
+@import "scss-partials/header";
+@import "scss-partials/navigation";
 
 /* -- Defaults -- */
 * {
@@ -103,4 +103,4 @@ main {
 
 
 /* -- footer -- */
-@import "css-partials/footer";
+@import "scss-partials/footer";
