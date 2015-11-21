@@ -1,0 +1,106 @@
+/* -- Breaking down the stylesheet -- */
+@import "css-partials/mixins";
+@import "css-partials/header";
+@import "css-partials/navigation";
+
+/* -- Defaults -- */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 95%;
+    margin: 0 auto;
+}
+
+
+/* -- Main content -- */
+main {
+    text-align: center;
+    background-color: #EEE;
+    padding: 1.5rem 0;
+    
+    p {
+        text-align: left;
+    }
+    
+    ul {
+        padding: 0;
+        display: inline-block;
+        width: auto;
+    }
+    
+    button:first-child {
+        border: 1px solid #CCC;
+        padding: 1rem 2rem;
+        background-color: white;
+        color: black;
+    }
+    
+    /* -- Inheritance -- */
+    .other-buttons {
+        @extend button:first-child; // inherits the properties from the first button
+        border-bottom: 4px solid cornflowerblue; // plus add some new properties
+    }
+    
+    
+    
+    
+    /* -- Columns Layout -- */
+    .clearfix {
+        &::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+    /*
+    // SASS syntax:
+    .clearfix {
+        &::after {
+            //...
+        }
+    }
+    
+    // CSS syntax:
+    .clearfix::after {
+        //...
+    }*/
+    
+    .container {
+        max-width: 800px;
+        background-color: coral;
+        padding: 2rem 0;
+        margin: 5% auto;
+    }
+    
+    .row {
+        background-color: cornsilk;
+        @extend .clearfix; // clear the float of the cols
+        margin: 0;
+    }
+    
+    .col-2 {
+        min-height: 100px;
+        background-color: #212121;
+        float: left;
+        @include equal-spacing(2, 100%, 2%); // call the mixin that will calculate width and spacing
+    }
+    
+    .col-3 {
+        min-height: 100px;
+        background-color: #212121;
+        float: left;
+        @include equal-spacing(3, 100%, 2%); // call the mixin that will calculate width and spacing
+    }
+}
+
+
+
+/* -- footer -- */
+@import "css-partials/footer";

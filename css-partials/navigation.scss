@@ -1,0 +1,56 @@
+/* -- NESTING -- */
+nav {
+    text-align: center;
+    background-color: chocolate;
+    
+    ul{
+        list-style: none;
+        display: inline-block;
+        width: auto;
+        padding: 0;
+        
+        li {
+            display: inline;
+            
+            a {
+                float: left;
+                padding: 0 1rem;
+                color: white;
+                text-decoration: none;
+                font-size: 1.5rem;
+                
+                &:hover {
+                    color:black;
+                }
+            }
+        }
+    }
+    
+    
+    // call your mixin for mobile view and do adjustments for <ul> and its children
+    @include mobile-view {
+        
+        background-color: transparent;
+        
+        ul {       
+            width: 100%;
+
+            li {
+                display: block;
+
+                a {
+                    background-color: chocolate;
+                    color: white;
+                    display: block;
+                    float: none;
+                    padding: 1rem;
+                    
+                    &:hover {
+                        background-color: #212121;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,7 @@
+footer {
+    // call your mixin here - set the gradient for footer 
+    @include my-gradient(#212121, black);
+    text-align: center;
+    padding: 1rem 0 25% 0;
+    color: white;
+}
