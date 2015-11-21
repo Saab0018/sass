@@ -1,7 +1,7 @@
 // triggers the media query if window width is less than 35rem
 @mixin mobile-view {
     @media (max-width: 35rem) {
-        @content;
+        @content; // refers to the set of declarations you are going to create for mobile-view of targeted element
     }
 }
 
